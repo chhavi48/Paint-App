@@ -9,15 +9,147 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: bisque;
+    background-color: rgb(12, 12, 11);
 }
 .container{
     display: flex;
     width: 100%;
+    gap:10px;
+    padding: 10px;
     max-width: 1050px;
 
 }
 section{
      background-color: white;
      border-radius: 7px;
+}
+.drawing-board{
+    flex: 1;
+}
+.tools-board{
+    width: 210px;
+    padding: 15px 22px 0;
+
+}
+.tools-board .row{
+       margin-bottom: 20px;  
+}
+.row .options{
+   list-style: none;
+   margin: 10px 0 0 5px;
+ 
+}
+.row .options .option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.option:is(:hover,.active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%);
+}
+.option:is(:hover,.active) :where(span,label){
+    color: #3a434e;
+}
+
+#fill-color:checked ~ label {
+    color: #44484c;
+    
+}
+
+
+.option :where(span,label){
+    color: #5a6168;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.option #fill-color{
+    height: 14px;
+    width: 14px;
+}
+.option #size-slider{
+     width: 100%;
+     height: 5px;
+     margin-top: 10px;
+}
+.colors .option{
+    height: 20px;
+    width: 20px;
+
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+}
+.colors .option:nth-child(1){
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+}
+.colors .option:nth-child(2){
+    background-color: black;
+}
+.colors .option:nth-child(3){
+    background-color: #6DD400;
+}
+.colors .option:nth-child(4){
+    background-color: #4A98F7;
+}
+.colors .option:nth-child(5){
+    background-color: #E02020;
+}
+
+
+
+
+
+.colors .option.selected::before{
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    top:50%;
+    left: 50%;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+}
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+.colors .option:first-child.selected::before{
+    border-color:#ccc;
+}
+.colors .options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button{
+      width: 100%;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 11px 0;
+      font-size: 0.9rem;
+      margin-bottom: 13px;
+      background: none;
+      border-radius: 5px ;
+      cursor: pointer;
+}
+.buttons .clear-canvas{
+     color:#6C757D;
+     border: 1px solid #6C757D;
+}
+.buttons .clear-canvas:hover{
+    background:#368bd6;
+    border: 1px solid #5f89ae;
+}
+.buttons .save-img{
+    background:#368bd6;
+    border: 1px solid #5f89ae;
+}
+.drawing-board canvas{
+    width: 100%;
+    height: 100%;
 }

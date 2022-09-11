@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -34,9 +35,9 @@
                 </div>
 
                 <div class="row">
-                    <label class="title">Shaps</label>
+                    <label class="title">Options</label>
                     <ul class="options">
-                      <li class="option">
+                      <li class="option active">
                             <img src="icons/brush.svg"/>
                             <span>Brush</span>
                       </li>
@@ -52,25 +53,28 @@
                     </ul>
                  </div>
 
-                 <div class="row">
+                 <div class="row colors">
                     <lable class="title">Colors</lable>
                     <ul class="options">
                         <li class="option"></li>
+                        <li class="option selected"></li>
                         <li class="option"></li>
                         <li class="option"></li>
-                        <li class="option"></li>
-                        <li class="option"></li>
+                        <li class="option">
+                            <input type="color" id="color-picker" value="#4A98F7"/>
+                        </li>
+                       
                     </ul>
                  </div>
 
-                 <div class="row">
+                 <div class="row buttons">
                     <button class="clear-canvas">Clear Canvas</button>
                     <button class="save-img">Save</button>
                  </div>
         </section>
-        <div class="drawing-board">
-
-        </div>
+        <section class="drawing-board">
+            <canvas></canvas>
+        </section>
     </div>
     
 </body>
